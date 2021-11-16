@@ -21,7 +21,11 @@ import ProgressBar from './ProgressBar';
   }}
 />
 
-export const Template = (args) => <ProgressBar {...args} />;
+export const Template = (args) => (
+  <div style={{ maxWidth: 500 }}>
+    <ProgressBar {...args} />
+  </div>
+);
 
 # ProgressBar
 
