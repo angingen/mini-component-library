@@ -15,6 +15,7 @@ const icons = {
 };
 
 const Icon = ({ id, size, strokeWidth = 1, ...delegated }) => {
+  console.log({ id });
   const Component = icons[id];
 
   if (!Component) {

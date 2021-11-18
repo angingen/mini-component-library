@@ -1,17 +1,27 @@
 import React from 'react';
-import styled from 'styled-components';
 
-import { COLORS } from '../../constants';
-import Icon from '../Icon';
 import { getDisplayedValue } from './Select.helpers';
+import * as S from './Select.styles';
 
 const Select = ({ label, value, onChange, children }) => {
   const displayedValue = getDisplayedValue(value, children);
+  const width = `${
+    displayedValue.length * 10 + S.PADDING.left + S.PADDING.right
+  }px`;
 
   return (
-    <select value={value} onChange={onChange}>
-      {children}
-    </select>
+    <S.SelectWrapper>
+      <S.Select
+        style={{
+          '--width': width,
+        }}
+        value={value}
+        onChange={onChange}
+      >
+        {children}
+      </S.Select>
+      <S.Icon id="chevron-down" />
+    </S.SelectWrapper>
   );
 };
 
