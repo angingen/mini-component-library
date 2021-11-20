@@ -40,10 +40,3 @@ export const Icon = styled(IconBase)`
   height: 24px;
   color: inherit;
 `;
-
-/* ${Icon} {
-    position: absolute;
-    right: 16px;
-    margin: auto 0;
-
-  } */
