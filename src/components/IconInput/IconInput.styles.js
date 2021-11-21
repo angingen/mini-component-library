@@ -1,20 +1,20 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { COLORS } from '../../constants';
-import IconBase from '../Icon';
+import { COLORS } from "../../constants";
+import IconBase from "../Icon";
 
 export const SIZE = {
   small: {
-    '--borderBottom': '1px',
-    '--fontSize': `${14 / 16}rem`,
-    '--padding': '4px 24px',
-    '--iconSize': '20px',
+    "--borderBottom": "1px",
+    "--fontSize": `${14 / 16}rem`,
+    "--padding": "4px 24px",
+    "--iconSize": "20px",
   },
   large: {
-    '--borderBottom': '2px',
-    '--fontSize': `${18 / 16}rem`,
-    '--padding': '7px 36px',
-    '--iconSize': '28px',
+    "--borderBottom": "2px",
+    "--fontSize": `${18 / 16}rem`,
+    "--padding": "7px 36px",
+    "--iconSize": "28px",
   },
 };
 
@@ -23,22 +23,26 @@ export const Input = styled.input`
   border-bottom: var(--borderBottom) solid ${COLORS.black};
   padding: var(--padding);
   font-size: var(--fontSize);
-  font-weight: ${({ thinText }) => (thinText ? 400 : 700)};
+  font-weight: 700;
 
-  color: ${({ thinText }) => (thinText ? COLORS.gray500 : COLORS.gray700)};
+  color: inherit;
   outline-color: ${COLORS.primary};
   outline-offset: 2px;
+  width: var(--width);
 
-  width: 100%;
-
-  &:hover {
-    color: ${({ thinText }) => !thinText && COLORS.black};
+  &::placeholder {
+    font-weight: 400;
+    color: ${COLORS.gray500};
   }
 `;
 
-export const InputWrapper = styled.div`
-  width: var(--width);
+export const InputWrapper = styled.label`
   position: relative;
+  color: ${COLORS.gray700};
+
+  &:hover {
+    color: ${COLORS.black};
+  }
 `;
 
 export const Icon = styled(IconBase)`
